@@ -11,6 +11,8 @@ class personas_fallecidas extends fs_controller {
       parent::private_core();
 
       $this->mostrar = 'todo';
+      $this->url     = '?page=personas_fallecidas';
+
       if(isset($_GET['mostrar'])){
         $this->mostrar = $_GET['mostrar'];
       }
