@@ -31,44 +31,6 @@ class persona_fallecida extends \fs_model {
 
    }
 
-   /* ONLY NECESARY FOR CALCULATE FIELDS OR SPECIAL PROCESS
-   public function __get($name) {
-      return parent::__get($name);
-
-      // Calculate Runtime Field Example. Can delete if don't needed
-      $result = NULL;
-      switch ($name) {
-         case "calculate_field":
-            $result = $this->field1 + $this->field2;
-            break;
-
-         default:
-            $result = parent::__get($name);
-            break;
-      }
-      return $result;
-      // END
-   }
-    */
-
-   /* ONLY NECESARY FOR CALCULATE FIELDS OR SPECIAL PROCESS
-   public function __set($name, $value) {
-      parent::__set($name, $value);
-
-      // Calculate Database Field Example. Can delete if don't needed
-      switch ($name) {
-         case "field1":
-         case "field2":
-            $this->calculate = $this->field1 * $this->field2;
-            break;
-
-         default:
-            break;
-      }
-      // END
-   }
-    */
-
    public function exists() {
       return parent::exists();
    }
@@ -84,6 +46,10 @@ class persona_fallecida extends \fs_model {
       $this->direccion = '';
       $this->tipodocumento = '';
       $this->numdocumento = '';
+   }
+
+   public function getAll(){
+     return $this->db->select("SELECT * FROM " . $this->table_name);
    }
 
    public function load_from_data($data) {
