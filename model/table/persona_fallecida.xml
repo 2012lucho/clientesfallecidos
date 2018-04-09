@@ -1,26 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <tabla>
-  <columna> <nombre>id</nombre>  <tipo>serial</tipo>  <nulo>NO</nulo>  <defecto>nextval('persona_fallecida_id_seq'::regclass)</defecto>  </columna>
+  <columna><nombre>id</nombre><tipo>serial</tipo><nulo>NO</nulo><defecto>nextval('persona_fallecida_id_seq'::regclass)</defecto></columna>
 
-  <columna>  <nombre>nombre</nombre>  <tipo>varchar(100)</tipo>  <nulo>NO</nulo></columna>
+  <columna><nombre>Identificacion</nombre><tipo>varchar(20)</tipo><nulo>NO</nulo></columna>
 
-  <columna>  <nombre>razonsocial</nombre> <tipo>varchar(100)</tipo>  <nulo>NO</nulo> </columna>
+  <columna><nombre>Nombre</nombre><tipo>varchar(20)</tipo><nulo>NO</nulo></columna>
 
-  <columna>  <nombre>observaciones</nombre> <tipo>varchar(250)</tipo> <nulo>NO</nulo> </columna>
+  <columna><nombre>Apellido</nombre><tipo>varchar(20)</tipo><nulo>NO</nulo></columna>
 
-  <columna>  <nombre>provincia</nombre>  <tipo>varchar(100)</tipo>  <nulo>NO</nulo>  </columna>
+  <columna><nombre>Fecha_nacimiento</nombre><tipo>date</tipo><nulo>NO</nulo></columna>
 
-  <columna>  <nombre>ciudad</nombre>  <tipo>varchar(100)</tipo>  <nulo>NO</nulo> </columna>
+  <columna><nombre>Edad</nombre><tipo>integer</tipo><nulo>NO</nulo></columna>
 
-  <columna>  <nombre>codpostal</nombre>  <tipo>varchar(10)</tipo>  <nulo>NO</nulo>  </columna>
+  <columna><nombre>Provincia</nombre><tipo>varchar(50)</tipo><nulo>NO</nulo></columna>
 
-  <columna>  <nombre>direccion</nombre>  <tipo>varchar(150)</tipo> <nulo>NO</nulo> </columna>
+  <columna><nombre>Ciudad</nombre><tipo>varchar(50)</tipo><nulo>NO</nulo></columna>
 
-  <columna>  <nombre>tipodocumento</nombre>  <tipo>varchar(10)</tipo>  <nulo>NO</nulo> </columna>
+  <columna><nombre>Nacionalidad</nombre><tipo>varchar(50)</tipo><nulo>NO</nulo></columna>
 
-  <columna>  <nombre>numdocumento</nombre>  <tipo>varchar(20)</tipo>  <nulo>NO</nulo> </columna>
+  <columna><nombre>EstadoCivil</nombre><tipo>boolean</tipo><nulo>NO</nulo></columna>
 
-  <restriccion>  <nombre>persona_fallecida_pkey</nombre>  <consulta>PRIMARY KEY (id)</consulta> </restriccion>
-  
+  <columna><nombre>Ficha_IESS</nombre><tipo>varchar(50)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>Apoderado</nombre><tipo>varchar(150)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>Fecha_defuncion</nombre><tipo>date</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>Hora_defuncion</nombre><tipo>time</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>Causa_defuncion</nombre><tipo>varchar(250)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>Hospital_defuncion</nombre><tipo>varchar(250)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>Lugar_defuncion</nombre><tipo>varchar(250)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>lugar_cementerio</nombre><tipo>varchar(250)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>tomo_cementerio</nombre><tipo>varchar(40)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>acta_cementerio</nombre><tipo>varchar(40)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>folio_cementerio</nombre><tipo>varchar(40)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>valor_cementerio</nombre><tipo>varchar(40)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>observaciones</nombre><tipo>varchar(250)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>servicio_religioso</nombre><tipo>varchar(250)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>hora_misa</nombre><tipo>time</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>lugar_velatorio</nombre><tipo>varchar(250)</tipo><nulo>NO</nulo></columna>
+
+  <columna><nombre>Hora_sepelio</nombre><tipo>time</tipo><nulo>NO</nulo></columna>
+
+  <restriccion><nombre>persona_fallecida_pkey</nombre><consulta>PRIMARY KEY (id)</consulta></restriccion>
 </tabla>

@@ -2,16 +2,33 @@
 
 class persona_fallecida extends \fs_model {
 
-   private $id;
-   private $nombre;
-   private $razonsocial;
-   private $observaciones;
-   private $provincia;
-   private $ciudad;
-   private $codpostal;
-   private $direccion;
-   private $tipodocumento;
-   private $numdocumento;
+    private $id;
+    private $Identificacion;
+    private $Nombre;
+    private $Apellido;
+    private $Fecha_nacimiento;
+    private $Edad;
+    private $Provincia;
+    private $Ciudad;
+    private $Nacionalidad;
+    private $EstadoCivil;
+    private $Ficha_IESS;
+    private $Apoderado;
+    private $Fecha_defuncion;
+    private $Hora_defuncion;
+    private $Causa_defuncion;
+    private $Hospital_defuncion;
+    private $Lugar_defuncion;
+    private $lugar_cementerio;
+    private $tomo_cementerio;
+    private $acta_cementerio;
+    private $folio_cementerio;
+    private $valor_cementerio;
+    private $observaciones;
+    private $servicio_religioso;
+    private $hora_misa;
+    private $lugar_velatorio;
+    private $Hora_sepelio;
 
    public function __construct($data = FALSE) {
       parent::__construct('persona_fallecida');
@@ -36,16 +53,33 @@ class persona_fallecida extends \fs_model {
    }
 
    public function clear() {
-      $this->id = '';
-      $this->nombre = '';
-      $this->razonsocial = '';
-      $this->observaciones = '';
-      $this->provincia = '';
-      $this->ciudad = '';
-      $this->codpostal = '';
-      $this->direccion = '';
-      $this->tipodocumento = '';
-      $this->numdocumento = '';
+     $this->id = '';
+     $this->Identificacion = '';
+     $this->Nombre = '';
+     $this->Apellido = '';
+     $this->Fecha_nacimiento = '';
+     $this->Edad = '';
+     $this->Provincia = '';
+     $this->Ciudad = '';
+     $this->Nacionalidad = '';
+     $this->EstadoCivil = '';
+     $this->Ficha_IESS = '';
+     $this->Apoderado = '';
+     $this->Fecha_defuncion = '';
+     $this->Hora_defuncion = '';
+     $this->Causa_defuncion = '';
+     $this->Hospital_defuncion = '';
+     $this->Lugar_defuncion = '';
+     $this->lugar_cementerio = '';
+     $this->tomo_cementerio = '';
+     $this->acta_cementerio = '';
+     $this->folio_cementerio = '';
+     $this->valor_cementerio = '';
+     $this->observaciones = '';
+     $this->servicio_religioso = '';
+     $this->hora_misa = '';
+     $this->lugar_velatorio = '';
+     $this->Hora_sepelio = '';
    }
 
    public function getAll(){
@@ -65,16 +99,7 @@ class persona_fallecida extends \fs_model {
       $this->numdocumento = $data['numdocumento'];
    }
 
-     protected function test() {
-      /*
-        PUT HERE MODEL DATA VALIDATIONS
-        EXAMPLE:
-        if($this->field_Numeric == 0) {
-        $this->new_error_msg('Must be inform a code value');
-        return FALSE;
-        }
-        return TRUE;
-       */
+   protected function test() {
       return parent::test();
    }
 
