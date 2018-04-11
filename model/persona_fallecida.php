@@ -2,33 +2,33 @@
 
 class persona_fallecida extends \fs_model {
 
-    private $id;
-    private $Identificacion;
-    private $Nombre;
-    private $Apellido;
-    private $Fecha_nacimiento;
-    private $Edad;
-    private $Provincia;
-    private $Ciudad;
-    private $Nacionalidad;
-    private $EstadoCivil;
-    private $Ficha_IESS;
-    private $Apoderado;
-    private $Fecha_defuncion;
-    private $Hora_defuncion;
-    private $Causa_defuncion;
-    private $Hospital_defuncion;
-    private $Lugar_defuncion;
-    private $lugar_cementerio;
-    private $tomo_cementerio;
-    private $acta_cementerio;
-    private $folio_cementerio;
-    private $valor_cementerio;
-    private $observaciones;
-    private $servicio_religioso;
-    private $hora_misa;
-    private $lugar_velatorio;
-    private $Hora_sepelio;
+    public $id;
+    public $Identificacion;
+    public $Nombre;
+    public $Apellido;
+    public $Fecha_nacimiento;
+    public $Edad;
+    public $Provincia;
+    public $Ciudad;
+    public $Nacionalidad;
+    public $EstadoCivil;
+    public $Ficha_IESS;
+    public $Apoderado;
+    public $Fecha_defuncion;
+    public $Hora_defuncion;
+    public $Causa_defuncion;
+    public $Hospital_defuncion;
+    public $Lugar_defuncion;
+    public $lugar_cementerio;
+    public $tomo_cementerio;
+    public $acta_cementerio;
+    public $folio_cementerio;
+    public $valor_cementerio;
+    public $observaciones;
+    public $servicio_religioso;
+    public $hora_misa;
+    public $lugar_velatorio;
+    public $Hora_sepelio;
 
    public function __construct($data = FALSE) {
       parent::__construct('persona_fallecida');
@@ -87,16 +87,32 @@ class persona_fallecida extends \fs_model {
    }
 
    public function load_from_data($data) {
-      $this->id = $data['id'];
-      $this->nombre = $data['nombre'];
-      $this->razonsocial = $data['razonsocial'];
-      $this->observaciones = $data['observaciones'];
-      $this->provincia = $data['provincia'];
-      $this->ciudad = $data['ciudad'];
-      $this->codpostal = $data['codpostal'];
-      $this->direccion = $data['direccion'];
-      $this->tipodocumento = $data['tipodocumento'];
-      $this->numdocumento = $data['numdocumento'];
+     $this->Identificacion =  $data['Identificacion'];
+     $this->Nombre =  $data['Nombre'];
+     $this->Apellido =  $data['Apellido'];
+     $this->Fecha_nacimiento =  $data['Fecha_nacimiento'];
+     $this->Edad =  $data['Edad'];
+     $this->Provincia =  $data['Provincia'];
+     $this->Ciudad =  $data['Ciudad'];
+     $this->Nacionalidad =  $data['Nacionalidad'];
+     $this->EstadoCivil =  $data['EstadoCivil'];
+     $this->Ficha_IESS =  $data['Ficha_IESS'];
+     $this->Apoderado =  $data['Apoderado'];
+     $this->Fecha_defuncion =  $data['Fecha_defuncion'];
+     $this->Hora_defuncion =  $data['Hora_defuncion'];
+     $this->Causa_defuncion =  $data['Causa_defuncion'];
+     $this->Hospital_defuncion =  $data['Hospital_defuncion'];
+     $this->Lugar_defuncion =  $data['Lugar_defuncion'];
+     $this->lugar_cementerio =  $data['lugar_cementerio'];
+     $this->tomo_cementerio =  $data['tomo_cementerio'];
+     $this->acta_cementerio =  $data['acta_cementerio'];
+     $this->folio_cementerio =  $data['Folio_cementerio'];
+     $this->valor_cementerio =  $data['valor_cementerio'];
+     $this->observaciones =  $data['observaciones'];
+     $this->servicio_religioso =  $data['servicio_religioso'];
+     $this->hora_misa =  $data['Hora_misa'];
+     $this->lugar_velatorio = $data['lugar_velatorio'];
+     $this->Hora_sepelio = $data['Hora_sepelio'];
    }
 
    protected function test() {
@@ -112,11 +128,20 @@ class persona_fallecida extends \fs_model {
       return $this->db->exec($sql);
    }
 
-   protected function insert() {
+   public function insert() {
       $sql = 'INSERT INTO persona_fallecida '
-              . '(id,nombre,razonsocial,observaciones,provincia,ciudad,codpostal,direccion,tipodocumento,numdocumento)'
+              . '(Identificacion,Nombre,Apellido,Fecha_nacimiento,Edad,Provincia,Ciudad,Nacionalidad,EstadoCivil,Ficha_IESS,
+                  Apoderado,Fecha_defuncion,Hora_defuncion,Causa_defuncion,Hospital_defuncion,Lugar_defuncion,
+                  lugar_cementerio,tomo_cementerio,acta_cementerio,folio_cementerio,valor_cementerio,observaciones,
+                  servicio_religioso,hora_misa,lugar_velatorio,Hora_sepelio)'
               . ' VALUES '
-              . '(...);';
+              . '("'.$this->Identificacion.'","'.$this->Nombre.'","'.$this->Apellido.'","'.$this->Fecha_nacimiento.'","'
+              .$this->Edad.'","'.$this->Provincia.'","'.$this->Ciudad.'","'.$this->Nacionalidad.'","'.$this->EstadoCivil.'",
+               "'.$this->Ficha_IESS.'","'.$this->Apoderado.'","'.$this->Fecha_defuncion.'","'.$this->Hora_defuncion.'",
+               "'.$this->Causa_defuncion.'","'.$this->Hospital_defuncion.'","'.$this->Lugar_defuncion.'",
+               "'.$this->lugar_cementerio.'","'.$this->tomo_cementerio.'","'.$this->acta_cementerio.'","'.$this->folio_cementerio.'",
+               "'.$this->valor_cementerio.'","'.$this->observaciones.'","'.$this->servicio_religioso.'","'.$this->hora_misa.'",
+               "'.$this->lugar_velatorio.'","'.$this->Hora_sepelio.'");';
 
       return $this->db->exec($sql);
    }

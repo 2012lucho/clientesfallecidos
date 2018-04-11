@@ -16,34 +16,6 @@
          </div>
       </div>
   </div>
-  <!--- Listado de enlaces -->
-  <ul class="nav nav-tabs" role="tablist">
-     <li class="active">
-        <a href="#">
-           <span class="text-capitalize hidden-xs">Datos Personales</span>
-           <span class="visible-xs">Datos Personales</span>
-        </a>
-     </li>
-     <li>
-        <a href="#">
-           <span class="text-capitalize hidden-xs">Datos defunción</span>
-           <span class="visible-xs">Datos defunción</span>
-        </a>
-     </li>
-     <li>
-        <a href="#">
-           <span class="text-capitalize hidden-xs">Datos Cementerio</span>
-           <span class="visible-xs">Datos Cementerio</span>
-        </a>
-     </li>
-     <li>
-        <a href="#">
-           <span class="text-capitalize hidden-xs">Datos Servicio</span>
-           <span class="visible-xs">Datos Servicio</span>
-        </a>
-     </li>
-  </ul>
-
   <!--- Tabla, vista de datos -->
   <div class="table-responsive">
      <table class="table table-hover">
@@ -51,9 +23,10 @@
            <tr>
               <th></th>
               <th></th>
-              <th class="text-left">Nombre</th>
-              <th class="text-left">Documento</th>
-              <th class="text-left">Observaciones</th>
+              <th class="text-left">Nombres y apellido</th>
+              <th class="text-left">Fecha de defunción</th>
+              <th class="text-left">Cementerio</th>
+              <th class="text-left">Servicio religioso</th>
               <th></th>
               <th></th>
            </tr>
@@ -61,11 +34,12 @@
         <tbody>
           {loop="$fsc->personasFallecidas"}
           <tr>
-             <th></th>
-             <th></th>
-             <th>{$value['nombre']}</th>
-             <th>{$value['tipodocumento']} {$value['numdocumento']}</th>
-             <th>{$value['observaciones']}</th>
+            <th></th>
+            <th></th>
+            <th>{$value['Nombre']} {$value['Apellido']}</th>
+            <th>{$value['Fecha_defuncion']}</th>
+            <th>{$value['lugar_cementerio']}</th>
+            <th>{$value['servicio_religioso']}</th>
             <th><span>Borrar</span></th>
             <th><span>Editar</span></th>
           </tr>
@@ -74,7 +48,7 @@
       </table>
     </div>
     <!-- modal de formulario para agregar y editar -->
-    <form name="f_persona_fallecida" class="form" action="{$fsc->url}" method="post">
+    <form name="f_persona_fallecida" class="form" action="{$fsc->urlGuardar}" method="post">
         <div class="modal" id="modal_persona_fallecida">
             <div class="modal-dialog" style="width:800px;">
                 <div class="modal-content">
@@ -106,8 +80,14 @@
                               </div>
                               <div class="form-group">
                                 <div class="input-group">
-                                  <label>Nombre y Apellido:</label>
-                                  <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Juan Perez" autocomplete="off"/>
+                                  <label>Nombres</label>
+                                  <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Juan" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Apellido</label>
+                                  <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Perez" autocomplete="off"/>
                                 </div>
                               </div>
                               <div class="form-group">
@@ -267,7 +247,7 @@
                     <div class="modal-body bg-info">
                         <div class="row">
                           <div class="col-sm-5 text-right">
-                              <button class="btn btn-sm btn-primary" type="submit" id="submit-btn" disabled>
+                              <button class="btn btn-sm btn-primary" type="submit" id="submit-btn">
                                   <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp; Guardar
                               </button>
                           </div>
