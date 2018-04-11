@@ -28,20 +28,21 @@
               <th class="text-left">Cementerio</th>
               <th class="text-left">Servicio religioso</th>
               <th></th>
-              <th></th>
            </tr>
         </thead>
         <tbody>
           {loop="$fsc->personasFallecidas"}
-          <tr>
+          <tr id="r_{$value['id']}">
             <th></th>
             <th></th>
             <th>{$value['Nombre']} {$value['Apellido']}</th>
             <th>{$value['Fecha_defuncion']}</th>
             <th>{$value['lugar_cementerio']}</th>
             <th>{$value['servicio_religioso']}</th>
-            <th><span>Borrar</span></th>
-            <th><span>Editar</span></th>
+            <th>
+              <a class="btn btn-sm btn-danger btn_borrar" href="#" data_id="{$value['id']}"><span class="glyphicon glyphicon-trash"></span></a>
+              <a class="btn btn-sm btn-primary" href="{$fsc->urlEditar}"><span class="glyphicon glyphicon-pencil"></span></a>
+            </th>
           </tr>
           {/loop}
         </tbody>
@@ -262,6 +263,21 @@
 
 <!-- JavaScript de la vista -->
 <script>
+  $(document).ready(function(){
+    $('.btn_borrar').on('click', function(){
+      let Id = $(this).attr('data_id');
+      $.post("{$fsc->urlBorrar}",{id:Id})
+      .done(function(d){
+        d = JSON.parse(d);
+        if (d['success']){
+          $('#r_'+Id).remove();
+        }
+      })
+      .fail(function(){
+        alert('Ocurrió un error al intentar borrar el elemento');
+      });
+    })
+  });
 </script>
 
 {include="footer"}

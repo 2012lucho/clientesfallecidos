@@ -45,7 +45,8 @@ class persona_fallecida extends \fs_model {
    }
 
    public function delete(){
-
+     $sql = 'DELETE FROM persona_fallecida WHERE id="'.$this->id.'"';
+     return $this->db->exec($sql);
    }
 
    public function exists() {

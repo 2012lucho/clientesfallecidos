@@ -12,6 +12,8 @@ class personas_fallecidas extends fs_controller {
 
       $this->mostrar    = 'todo';
       $this->urlGuardar = '?page=personas_fallecidas&mostrar=nueva';
+      $this->urlEditar  = '?page=edit_persona_fallecida';
+      $this->urlBorrar  = '?page=personas_fallecidas&function=borrar';
 
       if(isset($_GET['mostrar'])){
         $this->mostrar = $_GET['mostrar'];
@@ -49,13 +51,22 @@ class personas_fallecidas extends fs_controller {
 
       }
 
-      if ($this->mostrar == 'eliminar'){
+      if (isset($_GET['function'])){
+        $funcion = $_GET['function'];
+
+        if ($funcion == 'borrar'){
+          $personaFallecidaModel     = new persona_fallecida;
+          $personaFallecidaModel->id = $_POST['id'];
+          $personaFallecidaModel->delete();
+          echo  json_encode(["success" => true]);
+          exit();
+        }
 
       }
 
       $personaFallecidaModel    = new persona_fallecida;
       $this->personasFallecidas = $personaFallecidaModel->getAll();
-    
+
    }
 
 }
