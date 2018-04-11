@@ -42,6 +42,7 @@
             <th>
               <a class="btn btn-sm btn-danger btn_borrar" href="#" data_id="{$value['id']}"><span class="glyphicon glyphicon-trash"></span></a>
               <a class="btn btn-sm btn-primary" href="{$fsc->urlEditar}"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a class="btn btn-sm btn-primary" href="{$fsc->urlVer}&id={$value['id']}"><span class="glyphicon glyphicon-eye-open"></span></a>
             </th>
           </tr>
           {/loop}
@@ -72,7 +73,6 @@
 
                       <div class="tab-content">
                           <div id="sectionA" class="tab-pane fade in active">
-                              <h3>Datos Personales</h3>
                               <div class="form-group">
                                 <div class="input-group">
                                   <label>identificación:</label>
@@ -125,8 +125,8 @@
                                 <div class="input-group">
                                   <label>Estado civil:</label>
                                   <select class="form-control" type="text" name="estado_civil" id="estado_civil" placeholder="" autocomplete="off"/>
-                                    <option> Casado/a </option>
-                                    <option> Soltero/a </option>
+                                    <option value="CASADO/A"> Casado/a </option>
+                                    <option value="SOLTERO/A"> Soltero/a </option>
                                   </select>
                                 </div>
                               </div>
@@ -144,7 +144,6 @@
                               </div>
                           </div>
                           <div id="sectionB" class="tab-pane fade">
-                              <h3>Datos Defunción</h3>
                               <div class="form-group">
                                 <div class="input-group">
                                   <label>Fecha:</label>
@@ -177,7 +176,6 @@
                               </div>
                           </div>
                           <div id="sectionC" class="tab-pane fade">
-                              <h3>Datos Cementerio</h3>
                               <div class="form-group">
                                 <div class="input-group">
                                   <label>Lugar:</label>
@@ -216,7 +214,6 @@
                               </div>
                           </div>
                           <div id="sectionD" class="tab-pane fade">
-                              <h3>Datos Servicio</h3>
                               <div class="form-group">
                                 <div class="input-group">
                                   <label>Servicio religioso:</label>

@@ -87,6 +87,10 @@ class persona_fallecida extends \fs_model {
      return $this->db->select("SELECT * FROM " . $this->table_name);
    }
 
+   public function get(){
+     return $this->db->select("SELECT * FROM " . $this->table_name.' WHERE id="'.$this->id.'"');
+   }
+
    public function load_from_data($data) {
      $this->Identificacion =  $data['Identificacion'];
      $this->Nombre =  $data['Nombre'];

@@ -1,0 +1,46 @@
+{include="header"}
+<div class="container-fluid">
+  <h3>Vista detallada</h3>
+  <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#sectionA">Datos personales</a></li>
+      <li><a data-toggle="tab" href="#sectionB">Datos defunción</a></li>
+      <li><a data-toggle="tab" href="#sectionC">Datos cementerio</a></li>
+      <li><a data-toggle="tab" href="#sectionD">Datos servicio</a></li>
+  </ul>
+  <div class="tab-content">
+      <div id="sectionA" class="tab-pane fade in active">
+        <p><b>Identificación:</b> {$fsc->pf['Identificacion']}</p>
+        <p><b>Nombres y Apellido:</b> {$fsc->pf['Nombre']} {$fsc->pf['Apellido']}</p>
+        <p><b>Fecha de Nacimiento:</b> {$fsc->pf['Fecha_nacimiento']}</p>
+        <p><b>Edad:</b> {$fsc->pf['Edad']}</p>
+        <p><b>Provincia:</b> {$fsc->pf['Provincia']}</p>
+        <p><b>Ciudad:</b> {$fsc->pf['Ciudad']}</p>
+        <p><b>Nacionalidad:</b> {$fsc->pf['Nacionalidad']}</p>
+        <p><b>Estado Civil:</b> {$fsc->pf['EstadoCivil']}</p>
+        <p><b>Ficha IESS:</b> {$fsc->pf['Ficha_IESS']}</p>
+        <p><b>Apodarado:</b> {$fsc->pf['Apoderado']}</p>
+      </div>
+      <div id="sectionB" class="tab-pane fade">
+        <p><b>Fecha:</b> {$fsc->pf['Fecha_defuncion']}</p>
+        <p><b>Hora:</b> {$fsc->pf['Hora_defuncion']}</p>
+        <p><b>Causa:</b> {$fsc->pf['Causa_defuncion']}</p>
+        <p><b>Hospital:</b> {$fsc->pf['Hospital_defuncion']}</p>
+        <p><b>Lugar:</b> {$fsc->pf['Lugar_defuncion']}</p>
+      </div>
+      <div id="sectionC" class="tab-pane fade">
+        <p><b>Lugar:</b> {$fsc->pf['lugar_cementerio']}</p>
+        <p><b>Tomo:</b> {$fsc->pf['tomo_cementerio']}</p>
+        <p><b>Acta:</b> {$fsc->pf['acta_cementerio']}</p>
+        <p><b>Folio:</b> {$fsc->pf['folio_cementerio']}</p>
+        <p><b>Valor:</b> {$fsc->pf['valor_cementerio']}</p>
+        <p><b>Observaciones:</b> {$fsc->pf['observaciones']}</p>
+      </div>
+      <div id="sectionD" class="tab-pane fade">
+        <p><b>Servicio religioso:</b> {$fsc->pf['servicio_religioso']}</p>
+        <p><b>Hora de misa:</b> {$fsc->pf['hora_misa']}</p>
+        <p><b>Lugar Velatorio:</b> {$fsc->pf['lugar_velatorio']}</p>
+        <p><b>Hora Sepelio:</b> {$fsc->pf['Hora_sepelio']}</p>
+      </div>
+  </div>
+</div>
+{include="footer"}

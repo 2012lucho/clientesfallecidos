@@ -9,11 +9,12 @@ class personas_fallecidas extends fs_controller {
 
    protected function private_core() {
       parent::private_core();
-
-      $this->mostrar    = 'todo';
-      $this->urlGuardar = '?page=personas_fallecidas&mostrar=nueva';
-      $this->urlEditar  = '?page=edit_persona_fallecida';
-      $this->urlBorrar  = '?page=personas_fallecidas&function=borrar';
+      $this->personasFallecidas = [];
+      $this->mostrar            = 'todo';
+      $this->urlGuardar         = '?page=personas_fallecidas&mostrar=nueva';
+      $this->urlEditar          = '?page=edit_persona_fallecida';
+      $this->urlBorrar          = '?page=personas_fallecidas&function=borrar';
+      $this->urlVer             = '?page=ver_persona_fallecida';
 
       if(isset($_GET['mostrar'])){
         $this->mostrar = $_GET['mostrar'];
@@ -45,10 +46,9 @@ class personas_fallecidas extends fs_controller {
         $personaFallecidaModel->tomo_cementerio    = $_POST['tomo_cementerio'];
         $personaFallecidaModel->valor_cementerio   = $_POST['valor_cementerio'];
         $personaFallecidaModel->insert();
-      }
 
-      if ($this->mostrar == 'editar'){
-
+        $personaFallecidaModel    = new persona_fallecida;
+        $this->personasFallecidas = $personaFallecidaModel->getAll();
       }
 
       if (isset($_GET['function'])){
@@ -64,9 +64,10 @@ class personas_fallecidas extends fs_controller {
 
       }
 
-      $personaFallecidaModel    = new persona_fallecida;
-      $this->personasFallecidas = $personaFallecidaModel->getAll();
-
+      if($this->mostrar == 'todo'){
+        $personaFallecidaModel    = new persona_fallecida;
+        $this->personasFallecidas = $personaFallecidaModel->getAll();
+      }
    }
 
 }
