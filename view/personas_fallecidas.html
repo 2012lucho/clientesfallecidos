@@ -76,7 +76,7 @@
     <!-- modal de formulario para agregar y editar -->
     <form name="f_persona_fallecida" class="form" action="{$fsc->url}" method="post">
         <div class="modal" id="modal_persona_fallecida">
-            <div class="modal-dialog">
+            <div class="modal-dialog" style="width:800px;">
                 <div class="modal-content">
 
                     <div class="modal-header">
@@ -88,27 +88,181 @@
                     </div>
 
                     <div class="modal-body">
+                      <ul class="nav nav-tabs">
+                          <li class="active"><a data-toggle="tab" href="#sectionA">Datos personales</a></li>
+                          <li><a data-toggle="tab" href="#sectionB">Datos defunción</a></li>
+                          <li><a data-toggle="tab" href="#sectionC">Datos cementerio</a></li>
+                          <li><a data-toggle="tab" href="#sectionD">Datos servicio</a></li>
+                      </ul>
 
-                        <div class="form-group">
-                          <div class="input-group">
-                            <label>Nombre:</label>
-                            <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Juan Perez" autocomplete="off"/>
+                      <div class="tab-content">
+                          <div id="sectionA" class="tab-pane fade in active">
+                              <h3>Datos Personales</h3>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>identificación:</label>
+                                  <input class="form-control" type="text" name="identificacion" id="identificacion" placeholder="35.123.413" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Nombre y Apellido:</label>
+                                  <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Juan Perez" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Fecha de nacimiento:</label>
+                                  <input class="form-control" type="text" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Edad:</label>
+                                  <input class="form-control" type="number" name="edad" id="edad" placeholder="92" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Provincia:</label>
+                                  <input class="form-control" type="text" name="edad" id="provincia" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Ciudad:</label>
+                                  <input class="form-control" type="text" name="edad" id="ciudad" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Nacionalidad:</label>
+                                  <input class="form-control" type="text" name="edad" id="nacionalidad" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Estado civil:</label>
+                                  <select class="form-control" type="text" name="estado_civil" id="estado_civil" placeholder="" autocomplete="off"/>
+                                    <option> Casado/a </option>
+                                    <option> Soltero/a </option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Número Ficha IESS:</label>
+                                  <input class="form-control" type="text" name="iess" id="iess" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Apoderado:</label>
+                                  <input class="form-control" type="text" name="apoderado" id="apoderado" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
                           </div>
-                        </div>
+                          <div id="sectionB" class="tab-pane fade">
+                              <h3>Datos Defunción</h3>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Fecha:</label>
+                                  <input class="form-control" type="text" name="fecha_defuncion" id="fecha_defuncion" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Hora:</label>
+                                  <input class="form-control" type="text" name="hora_defuncion" id="hora_defuncion" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Causa:</label>
+                                  <input class="form-control" type="text" name="causa_defuncion" id="causa_defuncion" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Hospital:</label>
+                                  <input class="form-control" type="text" name="hospital_defuncion" id="hospital_defuncion" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Lugar de fallecimiento:</label>
+                                  <input class="form-control" type="text" name="lugar_defuncion" id="lugar_defuncion" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                          </div>
+                          <div id="sectionC" class="tab-pane fade">
+                              <h3>Datos Cementerio</h3>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Lugar:</label>
+                                  <input class="form-control" type="text" name="lugar_cementerio" id="lugar_cementerio" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Tomo:</label>
+                                  <input class="form-control" type="text" name="tomo_cementerio" id="tomo_cementerio" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Acta:</label>
+                                  <input class="form-control" type="text" name="acta_cementerio" id="acta_cementerio" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Folio:</label>
+                                  <input class="form-control" type="text" name="folio_cementerio" id="folio_cementerio" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Valor:</label>
+                                  <input class="form-control" type="text" name="valor_cementerio" id="valor_cementerio" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Observaciones:</label>
+                                  <input class="form-control" type="text" name="observaciones_cementerio" id="observaciones_cementerio" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                          </div>
+                          <div id="sectionD" class="tab-pane fade">
+                              <h3>Datos Servicio</h3>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Servicio religioso:</label>
+                                  <input class="form-control" type="text" name="servicio_religioso" id="servicio_religioso" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Horario de misa:</label>
+                                  <input class="form-control" type="text" name="horario_misa" id="horario_misa" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Lugar velatorio:</label>
+                                  <input class="form-control" type="text" name="lugar_velatorio" id="lugar_velatorio" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <label>Hora sepelio:</label>
+                                  <input class="form-control" type="text" name="hora_sepelio" id="hora_sepelio" placeholder="" autocomplete="off"/>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
 
-                        <div class="form-group">
-                          <div class="input-group">
-                            <label>Numero de documento:</label>
-                            <input class="form-control" type="text" name="numerodocumento" id="numerodocumento" placeholder="56876295" autocomplete="off"/>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <div class="input-group">
-                            <label>Observaciones:</label>
-                            <input class="form-control" type="textarea" name="observaciones" id="observaciones" placeholder="" autocomplete="off"/>
-                          </div>
-                        </div>
                     </div>
                     <div class="modal-body bg-info">
                         <div class="row">
