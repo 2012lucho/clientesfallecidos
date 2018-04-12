@@ -16,8 +16,8 @@ class edit_persona_fallecida extends fs_controller {
       }
 
       if(!isset($_GET['id'])){
-          echo json_encode(['error' => 'id not found']);
-          exit();
+        //  echo json_encode(['error' => 'id not found']);
+        //  exit();
       }
 
       $this->urlUpdate = '?page=edit_persona_fallecida&function=update&id='.$_GET['id'];
