@@ -124,11 +124,35 @@ class persona_fallecida extends \fs_model {
       return parent::test();
    }
 
-   protected function update() {
+   public function update() {
       $sql = 'UPDATE persona_fallecida SET '
-              . '  field1 = value1'
-              . ', fieldN = valueN'
-              . ' WHERE field_key1 = key_value1;';
+              .'Identificacion = "'.$this->Identificacion.'"
+              ,Nombre = "'.$this->Nombre.'"
+              ,Apellido = "'.$this->Apellido.'"
+              ,Fecha_nacimiento = "'.$this->Fecha_nacimiento.'"
+              ,Edad = "'.$this->Edad.'"
+              ,Provincia = "'.$this->Provincia.'"
+              ,Ciudad = "'.$this->Ciudad.'"
+              ,Nacionalidad = "'.$this->Nacionalidad.'"
+              ,EstadoCivil = "'.$this->EstadoCivil.'"
+              ,Ficha_IESS = "'.$this->Ficha_IESS.'"
+              ,Apoderado = "'.$this->Apoderado.'"
+              ,Fecha_defuncion = "'.$this->Fecha_defuncion.'"
+              ,Hora_defuncion = "'.$this->Hora_defuncion.'"
+              ,Causa_defuncion = "'.$this->Causa_defuncion.'"
+              ,Hospital_defuncion = "'.$this->Hospital_defuncion.'"
+              ,Lugar_defuncion = "'.$this->Lugar_defuncion.'"
+              ,lugar_cementerio = "'.$this->lugar_cementerio.'"
+              ,tomo_cementerio = "'.$this->tomo_cementerio.'"
+              ,acta_cementerio = "'.$this->acta_cementerio.'"
+              ,folio_cementerio = "'.$this->folio_cementerio.'"
+              ,valor_cementerio = "'.$this->valor_cementerio.'"
+              ,observaciones = "'.$this->observaciones.'"
+              ,servicio_religioso = "'.$this->servicio_religioso.'"
+              ,hora_misa = "'.$this->hora_misa.'"
+              ,lugar_velatorio = "'.$this->lugar_velatorio.'"
+              ,Hora_sepelio = "'.$this->Hora_sepelio.'"'
+              . ' WHERE id = "'.$this->id.'";';
 
       return $this->db->exec($sql);
    }

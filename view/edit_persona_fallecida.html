@@ -1,0 +1,189 @@
+{include="header"}
+<div class="container-fluid">
+  <h3>Editar</h3>
+  <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#sectionA">Datos personales</a></li>
+      <li><a data-toggle="tab" href="#sectionB">Datos defunción</a></li>
+      <li><a data-toggle="tab" href="#sectionC">Datos cementerio</a></li>
+      <li><a data-toggle="tab" href="#sectionD">Datos servicio</a></li>
+  </ul>
+  <form name="f_persona_fallecida" class="form" action="{$fsc->urlUpdate}" method="post">
+  <div class="tab-content">
+      <div id="sectionA" class="tab-pane fade in active">
+          <div class="form-group">
+            <div class="input-group">
+              <label>identificación:</label>
+              <input value="{$fsc->pf['Identificacion']}" class="form-control" type="text" name="identificacion" id="identificacion" placeholder="35.123.413" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Nombres</label>
+              <input value="{$fsc->pf['Nombre']}" class="form-control" type="text" name="nombre" id="nombre" placeholder="Juan" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Apellido</label>
+              <input value="{$fsc->pf['Apellido']}" class="form-control" type="text" name="apellido" id="apellido" placeholder="Perez" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Fecha de nacimiento:</label>
+              <input value="{$fsc->pf['Fecha_nacimiento']}" class="form-control" type="date" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Edad:</label>
+              <input value="{$fsc->pf['Edad']}" class="form-control" type="number" name="edad" id="edad" placeholder="92" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Provincia:</label>
+              <input value="{$fsc->pf['Provincia']}" class="form-control" type="text" name="edad" id="provincia" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Ciudad:</label>
+              <input value="{$fsc->pf['Ciudad']}" class="form-control" type="text" name="edad" id="ciudad" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Nacionalidad:</label>
+              <input value="{$fsc->pf['Nacionalidad']}" class="form-control" type="text" name="edad" id="nacionalidad" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Estado civil:</label>
+              <select value="{$fsc->pf['EstadoCivil']}" class="form-control" type="text" name="estado_civil" id="estado_civil" placeholder="" autocomplete="off"/>
+                <option value="CASADO/A"> Casado/a </option>
+                <option value="SOLTERO/A"> Soltero/a </option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Número Ficha IESS:</label>
+              <input value="{$fsc->pf['Ficha_IESS']}" class="form-control" type="text" name="iess" id="iess" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Apoderado:</label>
+              <input value="{$fsc->pf['Apoderado']}" class="form-control" type="text" name="apoderado" id="apoderado" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+      </div>
+      <div id="sectionB" class="tab-pane fade">
+          <div class="form-group">
+            <div class="input-group">
+              <label>Fecha:</label>
+              <input value="{$fsc->pf['Fecha_defuncion']}" class="form-control" type="date" name="fecha_defuncion" id="fecha_defuncion" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Hora:</label>
+              <input value="{$fsc->pf['Hora_defuncion']}" class="form-control" type="time" name="hora_defuncion" id="hora_defuncion" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Causa:</label>
+              <input value="{$fsc->pf['Causa_defuncion']}" class="form-control" type="text" name="causa_defuncion" id="causa_defuncion" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Hospital:</label>
+              <input value="{$fsc->pf['Hospital_defuncion']}" class="form-control" type="text" name="hospital_defuncion" id="hospital_defuncion" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Lugar de fallecimiento:</label>
+              <input value="{$fsc->pf['Lugar_defuncion']}" class="form-control" type="text" name="lugar_defuncion" id="lugar_defuncion" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+      </div>
+      <div id="sectionC" class="tab-pane fade">
+          <div class="form-group">
+            <div class="input-group">
+              <label>Lugar:</label>
+              <input value="{$fsc->pf['lugar_cementerio']}" class="form-control" type="text" name="lugar_cementerio" id="lugar_cementerio" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Tomo:</label>
+              <input value="{$fsc->pf['tomo_cementerio']}" class="form-control" type="text" name="tomo_cementerio" id="tomo_cementerio" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Acta:</label>
+              <input value="{$fsc->pf['acta_cementerio']}" class="form-control" type="text" name="acta_cementerio" id="acta_cementerio" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Folio:</label>
+              <input value="{$fsc->pf['folio_cementerio']}" class="form-control" type="text" name="folio_cementerio" id="folio_cementerio" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Valor:</label>
+              <input value="{$fsc->pf['valor_cementerio']}" class="form-control" type="text" name="valor_cementerio" id="valor_cementerio" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Observaciones:</label>
+              <input value="{$fsc->pf['observaciones']}" class="form-control" type="text" name="observaciones_cementerio" id="observaciones_cementerio" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+      </div>
+      <div id="sectionD" class="tab-pane fade">
+          <div class="form-group">
+            <div class="input-group">
+              <label>Servicio religioso:</label>
+              <input value="{$fsc->pf['servicio_religioso']}" class="form-control" type="text" name="servicio_religioso" id="servicio_religioso" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Horario de misa:</label>
+              <input value="{$fsc->pf['hora_misa']}" class="form-control" type="time" name="horario_misa" id="horario_misa" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Lugar velatorio:</label>
+              <input value="{$fsc->pf['lugar_velatorio']}" class="form-control" type="text" name="lugar_velatorio" id="lugar_velatorio" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <label>Hora sepelio:</label>
+              <input value="{$fsc->pf['Hora_sepelio']}" class="form-control" type="time" name="hora_sepelio" id="hora_sepelio" placeholder="" autocomplete="off"/>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5 text-right">
+        <button class="btn btn-sm btn-primary" type="submit" id="submit-btn">
+            <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp; Guardar
+        </button>
+    </div>
+  </div>
+<form>
+</div>
+{include="footer"}

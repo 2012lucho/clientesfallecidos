@@ -41,7 +41,7 @@
             <th>{$value['servicio_religioso']}</th>
             <th>
               <a class="btn btn-sm btn-danger btn_borrar" href="#" data_id="{$value['id']}"><span class="glyphicon glyphicon-trash"></span></a>
-              <a class="btn btn-sm btn-primary" href="{$fsc->urlEditar}"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a class="btn btn-sm btn-primary" href="{$fsc->urlEditar}&id={$value['id']}"><span class="glyphicon glyphicon-pencil"></span></a>
               <a class="btn btn-sm btn-primary" href="{$fsc->urlVer}&id={$value['id']}"><span class="glyphicon glyphicon-eye-open"></span></a>
             </th>
           </tr>
