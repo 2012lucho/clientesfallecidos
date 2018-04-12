@@ -7,8 +7,11 @@ class personas_fallecidas extends fs_controller {
       parent::__construct(__CLASS__, 'Personas fallecidas', 'informes');   // PUT HERE MENU OPTION WHERE INSTALL CONTROLLER
    }
 
+   public $canPPagina = 20; //cantida de elementos por pagina
+
    protected function private_core() {
       parent::private_core();
+
       $this->personasFallecidas = [];
       $this->mostrar            = 'todo';
       $this->urlGuardar         = '?page=personas_fallecidas&mostrar=nueva';
@@ -16,9 +19,20 @@ class personas_fallecidas extends fs_controller {
       $this->urlBorrar          = '?page=personas_fallecidas&function=borrar';
       $this->urlVer             = '?page=ver_persona_fallecida';
 
+      $limit      = 0;
+      $offset     = 0;
+      $page       = 1;
+
+      if (isset($_GET['p'])){
+        $page   = $_GET['p'];
+      }
+      $limit  = $this->canPPagina;
+      $offset = $this->canPPagina*($page-1);
+
       if(isset($_GET['mostrar'])){
         $this->mostrar = $_GET['mostrar'];
       }
+      $this->pg = $page;
 
       if ($this->mostrar == 'nueva'){
         $personaFallecidaModel                     = new persona_fallecida;
@@ -48,6 +62,9 @@ class personas_fallecidas extends fs_controller {
         $personaFallecidaModel->insert();
 
         $personaFallecidaModel    = new persona_fallecida;
+        $personaFallecidaModel->limit  = $limit;
+        $personaFallecidaModel->offset = $offset;
+        $personaFallecidaModel->canPPagina = $this->canPPagina;
         $this->personasFallecidas = $personaFallecidaModel->getAll();
       }
 
@@ -66,8 +83,22 @@ class personas_fallecidas extends fs_controller {
 
       if($this->mostrar == 'todo'){
         $personaFallecidaModel    = new persona_fallecida;
+        $personaFallecidaModel->limit  = $limit;
+        $personaFallecidaModel->offset = $offset;
+        $personaFallecidaModel->canPPagina = $this->canPPagina;
         $this->personasFallecidas = $personaFallecidaModel->getAll();
       }
+   }
+
+   public function paginas()
+   {
+       $p = 1;
+       if (isset($_GET['p'])){
+         $page   = $_GET['p'];
+       }
+       $personaFallecidaModel    = new persona_fallecida;
+       $personaFallecidaModel->canPPagina = $this->canPPagina;
+       return $personaFallecidaModel->getPaginas('?page=personas_fallecidas',$p);
    }
 
 }

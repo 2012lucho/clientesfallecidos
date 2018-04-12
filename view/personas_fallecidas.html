@@ -49,6 +49,20 @@
         </tbody>
       </table>
     </div>
+    <!-- paginacion -->
+    <div class="container-fluid">
+       <div class="row">
+          <div class="col-sm-12 text-center">
+             <ul class="pagination">
+                {loop="$fsc->paginas()"}
+                <li{if="$fsc->pg == $value['num']"} class="active"{/if}>
+                   <a href="{$value['url']}">{$value['num']}</a>
+                </li>
+                {/loop}
+             </ul>
+          </div>
+       </div>
+    </div>
     <!-- modal de formulario para agregar y editar -->
     <form name="f_persona_fallecida" class="form" action="{$fsc->urlGuardar}" method="post">
         <div class="modal" id="modal_persona_fallecida">

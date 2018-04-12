@@ -30,6 +30,10 @@ class persona_fallecida extends \fs_model {
     public $lugar_velatorio;
     public $Hora_sepelio;
 
+    public $limit  = 0;
+    public $offset = 0;
+    public $canPPagina = 1;
+
    public function __construct($data = FALSE) {
       parent::__construct('persona_fallecida');
 
@@ -51,6 +55,41 @@ class persona_fallecida extends \fs_model {
 
    public function exists() {
       return parent::exists();
+   }
+
+   public function getPaginas($url,$actual){
+     $salida = [];
+
+     $this->offset = 0;
+     $this->limit  = 0;
+
+     $resultados   = $this->getAll();
+     $cantidad     = count($resultados);
+     $paginas      = floor($cantidad/$this->canPPagina);
+
+     for ($c=0;$c<$paginas;$c++){
+        $n = $c+1;
+        $e = ['actual' => 0, 'num' => $n, 'url' => $url.'&p='.$n];
+        if ($c+1 == $actual){
+          $e['actual'] = 1;
+        }
+        array_push($salida,$e);
+     }
+
+     return $salida;
+   }
+
+   private function getLimitOffset(){
+     $t = '';
+
+     if ($this->limit != 0){
+       $t .= 'LIMIT '.$this->limit.' ';
+     }
+
+     if ($this->offset){
+       $t .= 'OFFSET '.$this->offset.' ';
+     }
+     return $t;
    }
 
    public function clear() {
@@ -84,7 +123,7 @@ class persona_fallecida extends \fs_model {
    }
 
    public function getAll(){
-     return $this->db->select("SELECT * FROM " . $this->table_name);
+     return $this->db->select("SELECT * FROM " . $this->table_name. ' WHERE 1 ORDER BY id DESC '.$this->getLimitOffset());
    }
 
    public function get(){
