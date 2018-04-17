@@ -30,6 +30,9 @@ class edit_persona_fallecida extends fs_controller {
         $personaFallecidaModel->Apoderado          = $_POST['apoderado'];
         $personaFallecidaModel->Causa_defuncion    = $_POST['causa_defuncion'];
         $personaFallecidaModel->Edad               = $_POST['edad'];
+        $personaFallecidaModel->Provincia          = $_POST['Provincia'];
+        $personaFallecidaModel->Ciudad             = $_POST['Ciudad'];
+        $personaFallecidaModel->Nacionalidad       = $_POST['Nacionalidad'];
         $personaFallecidaModel->EstadoCivil        = $_POST['estado_civil'];
         $personaFallecidaModel->Fecha_defuncion    = $_POST['fecha_defuncion'];
         $personaFallecidaModel->Fecha_nacimiento   = $_POST['fecha_nacimiento'];
@@ -40,8 +43,8 @@ class edit_persona_fallecida extends fs_controller {
         $personaFallecidaModel->Hospital_defuncion = $_POST['hospital_defuncion'];
         $personaFallecidaModel->Identificacion     = $_POST['identificacion'];
         $personaFallecidaModel->Ficha_IESS         = $_POST['iess'];
-        $personaFallecidaModel->Lugar_cementerio   = $_POST['lugar_cementerio'];
-        $personaFallecidaModel->lugar_defuncion    = $_POST['lugar_defuncion'];
+        $personaFallecidaModel->lugar_cementerio   = $_POST['lugar_cementerio'];
+        $personaFallecidaModel->Lugar_defuncion    = $_POST['lugar_defuncion'];
         $personaFallecidaModel->lugar_velatorio    = $_POST['lugar_velatorio'];
         $personaFallecidaModel->Nombre             = $_POST['nombre'];
         $personaFallecidaModel->observaciones      = $_POST['observaciones_cementerio'];
